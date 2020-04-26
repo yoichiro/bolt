@@ -65,6 +65,16 @@ message text matches that pattern.
 app.message([pattern ,] fn);
 ```
 
+### TypeScript Generics support
+
+Slack Bolt is written with TypeScript, and each event listener method is parameterized using TypeScript Generics. That is, when writing each event listener method with TypeScript, you can specify a suitable parameter type to use code suggestions and more rich compiler validations. 
+
+Here is the parameter list for each event listener method you can specify:
+
+* `app.shortcut<T extends SlackShortcut>(...)` - [`GlobalShortcut`](https://api.slack.com/interactivity/shortcuts/using#global_shortcuts), [`MessageShortcut`](https://api.slack.com/interactivity/shortcuts/using#message_shortcuts)
+* `app.action<T extends SlackAction>(...)` - 
+
+
 ## Making things happen
 
 Most of the app's functionality will be inside listener functions (the `fn` parameters above). These functions are
